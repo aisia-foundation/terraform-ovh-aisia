@@ -1,6 +1,8 @@
 # terraform-ovh-aisia
 
-Module Terraform publié sur le registry HCP privé AISIA.
+[![Terraform Registry](https://img.shields.io/badge/Terraform%20Registry-terraform-ovh-aisia-7B42BC?logo=terraform)](https://registry.terraform.io/modules/aisia-foundation/aisia/ovh/latest) [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-brightgreen.svg)](LICENSE)
+
+Module Terraform publié sur le registry HCP privé AISIA + public `aisia-foundation` sur registry.terraform.io.
 
 Provisionne un substrat **OVHcloud Managed Kubernetes Service (MKS)** (L1) pour héberger la
 plateforme AISIA. L'application AISIA est ensuite déployée via le module
