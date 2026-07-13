@@ -1,14 +1,43 @@
+<!-- GENERATED:09_publications:start -->
+<!--
+  GÉNÉRÉ — ne pas éditer à la main.
+  Source: scripts/generate/09_publications.py
+  Régénérer: python3 scripts/aisia.py regen
+  Gate deploy: python3 scripts/release/deploy.py <ver> --mode docs
+-->
+
 # terraform-ovh-aisia
 
-[![Terraform Registry](https://img.shields.io/badge/Terraform%20Registry-terraform-ovh-aisia-7B42BC?logo=terraform)](https://registry.terraform.io/modules/aisia-foundation/aisia/ovh/latest) [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-brightgreen.svg)](LICENSE)
+> **v6.12.23** — module registry — bootstrap OVH + substrat AISIA
 
-Module Terraform publié sur le registry HCP privé AISIA + public `aisia-foundation` sur registry.terraform.io.
+## Cœur d'AISIA (identité produit)
 
-Provisionne un substrat **OVHcloud Managed Kubernetes Service (MKS)** (L1) pour héberger la
-plateforme AISIA. L'application AISIA est ensuite déployée via le module
-[terraform-aisia-cluster](../terraform-aisia-cluster/) qui consomme les outputs de ce module.
+AISIA est le **chef d'orchestre IA local-first** : une requête entre, le meilleur modèle (local ou cloud) exécute, la réponse sort traçable et gouvernée.
 
-**Version** : 1.0.0 — Voir [CHANGELOG](CHANGELOG.md)
+**Fonction première** : orchestrer chaque requête IA en **local-first** (Ollama sur cluster)
+puis cloud si nécessaire — via `BanditRouter`, pas un simple reverse-proxy.
+
+**Différenciation** : orchestration local-first — pas un proxy LLM stateless.
+
+| vs proxy LLM | AISIA |
+|--------------|-------|
+| 1 provider fixe | **87** providers + **58** modèles locaux |
+| Stateless | Qdrant + audit AI Act + multi-tenant |
+| SaaS opaque | Déployable Swarm/K8s — **v6.12.23** LIVE |
+
+Documentation : [README racine](../../../../README.md) ·
+[Product Identity](../../../../specification/03-Project-State/Product-Identity-AISIA.md)
+
+```mermaid
+flowchart LR
+  App[Application] --> AISIA[AISIA orchestration]
+  AISIA --> Local[Ollama local]
+  AISIA --> Cloud[Providers cloud]
+```
+
+
+---
+<!-- GENERATED:09_publications:end -->
 
 ## Architecture
 
