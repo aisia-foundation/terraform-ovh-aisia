@@ -8,7 +8,7 @@
 
 # terraform-ovh-aisia
 
-> **v6.12.24** — module registry — bootstrap OVH + substrat AISIA
+> **v6.12.25** — module registry — bootstrap OVH + substrat AISIA
 
 ## Cœur d'AISIA (identité produit)
 
@@ -23,7 +23,7 @@ puis cloud si nécessaire — via `BanditRouter`, pas un simple reverse-proxy.
 |--------------|-------|
 | 1 provider fixe | **87** providers + **58** modèles locaux |
 | Stateless | Qdrant + audit AI Act + multi-tenant |
-| SaaS opaque | Déployable Swarm/K8s — **v6.12.24** LIVE |
+| SaaS opaque | Déployable Swarm/K8s — **v6.12.25** LIVE |
 
 Documentation : [README racine](../../../../README.md) ·
 [Product Identity](../../../../specification/03-Project-State/Product-Identity-AISIA.md)
@@ -71,7 +71,7 @@ module "aisia_ovh_k8s" {
   org_id       = "acme"
   service_key  = "C1"
   service_name = "your-ovh-project-id"
-  image_tag    = "v6.9.61"
+  image_tag    = "v6.12.25"
   tier         = "saas"
 
   region       = "GRA11"
@@ -83,7 +83,7 @@ module "aisia_app" {
   source  = "app.terraform.io/AISIA/aisia-cluster/kubernetes"
   version = "~> 1.0"
 
-  image_tag = "v6.9.61"
+  image_tag = "v6.12.25"
   tier      = "saas"
   domain    = "acme.aisia.fr"
 }
@@ -102,7 +102,7 @@ module "aisia_app" {
 | `node_count` | Nombre de nœuds du pool principal | `number` | `1` | non |
 | `instance_flavor` | Flavor OVH MKS (b2-7 = 2 vCPU / 7 GB) | `string` | `"b2-7"` | non |
 | `image_registry` | Registry des images AISIA | `string` | `"registry.aisia.fr"` | non |
-| `image_tag` | Tag d'image AISIA à déployer | `string` | `"v6.9.61"` | non |
+| `image_tag` | Tag d'image AISIA à déployer | `string` | `"v6.12.25"` | non |
 | `domain` | Domaine custom (vide = *.aisia.fr) | `string` | `""` | non |
 | `tier` | Offre tarifaire (saas \| baas \| paas) | `string` | `"saas"` | non |
 | `gpu_enabled` | Provisionner un node pool GPU | `bool` | `false` | non |
@@ -142,3 +142,17 @@ module "aisia_app" {
 ## Licence
 
 [Mozilla Public License 2.0](LICENSE) — Copyright (c) 2026 AISIA (Sébastien Lambert).
+
+## Référence des variables & sorties (auto-générée)
+
+<!-- BEGIN_TF_DOCS -->
+<!-- END_TF_DOCS -->
+
+<!-- TF-MODULE-DOCS:09_publications -->
+## Documentation AISIA
+
+- **Documentation produit** : [aisia.fr/docs](https://aisia.fr/docs)
+- **Référence API** : [api.aisia.fr/docs](https://api.aisia.fr/docs)
+- **Provider Terraform** : [aisia-foundation/aisia](https://registry.terraform.io/providers/aisia-foundation/aisia/latest/docs)
+- **Guide d'implémentation** : [getting-started](https://registry.terraform.io/providers/aisia-foundation/aisia/latest/docs/guides/getting-started)
+- **Version LIVE** : **v6.12.25**
