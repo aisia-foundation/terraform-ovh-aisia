@@ -8,7 +8,7 @@
 
 # terraform-ovh-aisia
 
-> **v6.12.23** — module registry — bootstrap OVH + substrat AISIA
+> **v6.12.24** — module registry — bootstrap OVH + substrat AISIA
 
 ## Cœur d'AISIA (identité produit)
 
@@ -23,7 +23,7 @@ puis cloud si nécessaire — via `BanditRouter`, pas un simple reverse-proxy.
 |--------------|-------|
 | 1 provider fixe | **87** providers + **58** modèles locaux |
 | Stateless | Qdrant + audit AI Act + multi-tenant |
-| SaaS opaque | Déployable Swarm/K8s — **v6.12.23** LIVE |
+| SaaS opaque | Déployable Swarm/K8s — **v6.12.24** LIVE |
 
 Documentation : [README racine](../../../../README.md) ·
 [Product Identity](../../../../specification/03-Project-State/Product-Identity-AISIA.md)
