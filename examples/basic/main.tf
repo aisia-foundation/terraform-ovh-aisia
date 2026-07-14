@@ -38,7 +38,7 @@ module "aisia_ovh_k8s" {
   org_id       = "acme"
   service_key  = "C1"
   service_name = "your-ovh-project-id"
-  image_tag    = "v6.12.33"
+  image_tag    = "v6.12.34"
   tier         = "saas"
 
   region          = "GRA11"
@@ -60,7 +60,7 @@ module "aisia_ovh_k8s" {
 # module "aisia_app" {
 #   source  = "app.terraform.io/AISIA/aisia-cluster/kubernetes"
 #   version = "~> 1.0"
-#   image_tag = "v6.12.33"
+#   image_tag = "v6.12.34"
 #   tier      = "saas"
 #   domain    = "acme.aisia.fr"
 # }
