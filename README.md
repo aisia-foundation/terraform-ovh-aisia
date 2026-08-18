@@ -207,14 +207,14 @@ module "aisia_app" {
 
 | Artefact | Repo | Public registry.terraform.io |
 |----------|------|------------------------------|
-| Provider `aisia-foundation/aisia` | `6.12.96` | **6.12.95** ❌ écart |
-| Module `terraform-aisia-cluster` (`cluster/aisia`) | `6.12.96` | **6.12.95** ❌ écart |
-| Module `terraform-aisia-swarm` (`swarm/aisia`) | `6.12.96` | **6.12.95** ❌ écart |
-| Module `terraform-aws-aisia` (`aisia/aws`) | `6.12.96` | **6.12.95** ❌ écart |
-| Module `terraform-azure-aisia` (`aisia/azure`) | `6.12.96` | **6.12.95** ❌ écart |
+| Provider `aisia-foundation/aisia` | `6.12.96` | **6.12.96** ✅ |
+| Module `terraform-aisia-cluster` (`cluster/aisia`) | `6.12.96` | **6.12.96** ✅ |
+| Module `terraform-aisia-swarm` (`swarm/aisia`) | `6.12.96` | **6.12.96** ✅ |
+| Module `terraform-aws-aisia` (`aisia/aws`) | `6.12.96` | **6.12.96** ✅ |
+| Module `terraform-azure-aisia` (`aisia/azure`) | `6.12.96` | **6.12.96** ✅ |
 | Module `terraform-google-aisia` (`aisia/google`) | `6.12.96` | **absent public** ⚠️ |
-| Module `terraform-ovh-aisia` (`aisia/ovh`) | `6.12.96` | **6.12.95** ❌ écart |
-| Module `terraform-scaleway-aisia` (`aisia/scaleway`) | `6.12.96` | **6.12.95** ❌ écart |
+| Module `terraform-ovh-aisia` (`aisia/ovh`) | `6.12.96` | **6.12.96** ✅ |
+| Module `terraform-scaleway-aisia` (`aisia/scaleway`) | `6.12.96` | **6.12.96** ✅ |
 
 HCP privé (`app.terraform.io/AISIA`) : modules + provider publiés via `scripts/ops/publish_terraform.sh --apply` (mesuré hors ce tableau). Ne pas écrire « 100 % registry public » si Google public est absent.
 
