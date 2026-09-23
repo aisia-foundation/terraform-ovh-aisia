@@ -1,7 +1,7 @@
 ###############################################################################
 # AISIA Terraform OVH — variables
 #
-# Contrat NORMALISÉ v6.13.18 : les 13 variables communes ci-dessous sont
+# Contrat NORMALISÉ v6.14.1 : les 13 variables communes ci-dessous sont
 # identiques (noms + types + defaults cloud-agnostiques) à tous les clouds ×
 # substrats (référence : infra/terraform/gcp/{k8s,swarm}). Les defaults
 # spécifiques au cloud (region, instance_flavor, substrate) sont adaptés à OVH.
@@ -63,7 +63,7 @@ variable "image_registry" {
 variable "image_tag" {
   description = "Tag d'image AISIA à déployer."
   type        = string
-  default     = "v6.13.18"
+  default     = "v6.14.1"
 }
 
 variable "domain" {
