@@ -1,7 +1,7 @@
 ###############################################################################
 # AISIA Terraform OVH — variables
 #
-# Contrat NORMALISÉ v6.13.16 : les 13 variables communes ci-dessous sont
+# Contrat NORMALISÉ v6.13.18 : les 13 variables communes ci-dessous sont
 # identiques (noms + types + defaults cloud-agnostiques) à tous les clouds ×
 # substrats (référence : infra/terraform/gcp/{k8s,swarm}). Les defaults
 # spécifiques au cloud (region, instance_flavor, substrate) sont adaptés à OVH.
@@ -63,7 +63,7 @@ variable "image_registry" {
 variable "image_tag" {
   description = "Tag d'image AISIA à déployer."
   type        = string
-  default     = "v6.13.16"
+  default     = "v6.13.18"
 }
 
 variable "domain" {
@@ -131,7 +131,16 @@ variable "ssh_public_key" {
 }
 
 variable "ssh_allowed_cidr" {
-  description = "CIDR autorisé pour SSH (TODO prod : IP fixe admin)."
+  description = "CIDR optionnel autorisé pour SSH. Null désactive l'exposition SSH."
   type        = string
-  default     = "0.0.0.0/0"
+  default     = null
+  nullable    = true
+  validation {
+    condition = var.ssh_allowed_cidr == null || (
+      trimspace(var.ssh_allowed_cidr) != "" &&
+      var.ssh_allowed_cidr != "0.0.0.0/0" &&
+      can(cidrhost(var.ssh_allowed_cidr, 0))
+    )
+    error_message = "ssh_allowed_cidr doit être un CIDR valide et ne peut jamais être 0.0.0.0/0. Omettez-le pour désactiver SSH."
+  }
 }

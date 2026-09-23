@@ -1,4 +1,4 @@
-# AISIA — Terraform OVH — versions et providers (sprint v6.13.16)
+# AISIA — Terraform OVH — versions et providers (sprint v6.13.18)
 terraform {
   required_version = ">= 1.5.0"
 

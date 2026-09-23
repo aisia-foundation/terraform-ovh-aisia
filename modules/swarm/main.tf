@@ -1,5 +1,5 @@
 ###############################################################################
-# AISIA — Multi-cloud Phase 4 partie 2 (sprint v6.13.16)
+# AISIA — Multi-cloud Phase 4 partie 2 (sprint v6.13.18)
 #
 # Module Terraform OVH Public Cloud : déploie un cluster Docker Swarm AISIA
 # minimal sur OVH Public Cloud Instances (b2-7 manager + workers).
@@ -62,10 +62,11 @@ resource "openstack_networking_subnet_v2" "aisia" {
 ###############################################################################
 resource "openstack_networking_secgroup_v2" "swarm" {
   name        = "${var.cluster_name}-sg"
-  description = "AISIA Swarm cluster (sprint v6.13.16)"
+  description = "AISIA Swarm cluster (sprint v6.13.18)"
 }
 
 resource "openstack_networking_secgroup_rule_v2" "ssh" {
+  count             = var.ssh_allowed_cidr == null ? 0 : 1
   direction         = "ingress"
   ethertype         = "IPv4"
   protocol          = "tcp"

@@ -1,5 +1,5 @@
 ###############################################################################
-# AISIA Terraform OVH — outputs (sprint v6.13.16)
+# AISIA Terraform OVH — outputs (sprint v6.13.18)
 ###############################################################################
 
 # ── Contrat de sortie normalisé (commun substrat swarm) ────────────────────
