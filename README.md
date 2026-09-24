@@ -67,8 +67,8 @@ provider "kubernetes" {
 
 # L1 — substrat MKS
 module "aisia_ovh_k8s" {
-  source  = "app.terraform.io/AISIA/aisia/ovh"
-  version = "~> 1.0"
+  source  = "aisia-foundation/aisia/ovh"
+  version = "6.14.1"
 
   org_id       = "acme"
   service_key  = "C1"
@@ -82,8 +82,8 @@ module "aisia_ovh_k8s" {
 
 # L2 — déploiement AISIA
 module "aisia_app" {
-  source  = "app.terraform.io/AISIA/aisia-cluster/kubernetes"
-  version = "~> 1.0"
+  source  = "aisia-foundation/cluster/aisia"
+  version = "6.14.1"
 
   image_tag = "v6.14.1"
   tier      = "saas"
@@ -139,7 +139,7 @@ module "aisia_app" {
 - Provider `ovh/ovh ~> 0.50`
 - Credentials OVH via env vars `OVH_APPLICATION_KEY` / `OVH_APPLICATION_SECRET` / `OVH_CONSUMER_KEY`
 - Projet OVH Public Cloud existant (`service_name`)
-- Module `terraform-aisia-cluster ~> 1.0` pour déployer l'application
+- Module `aisia-foundation/cluster/aisia` 6.14.1 pour déployer l'application
 
 ## Licence
 

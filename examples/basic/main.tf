@@ -31,8 +31,8 @@ provider "ovh" {
 ###############################################################################
 module "aisia_ovh_k8s" {
   # Registre HCP privé (nécessite credentials) :
-  #   source  = "app.terraform.io/AISIA/aisia/ovh"
-  #   version = "~> 1.0"
+  #   source  = "aisia-foundation/aisia/ovh"
+  #   version = "6.14.1"
   source = "../../"
 
   org_id       = "acme"
@@ -58,8 +58,8 @@ module "aisia_ovh_k8s" {
 # }
 #
 # module "aisia_app" {
-#   source  = "app.terraform.io/AISIA/aisia-cluster/kubernetes"
-#   version = "~> 1.0"
+#   source  = "aisia-foundation/cluster/aisia"
+#   version = "6.14.1"
 #   image_tag = "v6.14.1"
 #   tier      = "saas"
 #   domain    = "acme.aisia.fr"
