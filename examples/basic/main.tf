@@ -38,7 +38,7 @@ module "aisia_ovh_k8s" {
   org_id       = "acme"
   service_key  = "C1"
   service_name = "your-ovh-project-id"
-  image_tag    = "v6.14.8"
+  image_tag    = "v6.14.9"
   tier         = "saas"
 
   region          = "GRA11"
@@ -60,7 +60,7 @@ module "aisia_ovh_k8s" {
 # module "aisia_app" {
 #   source  = "aisia-foundation/cluster/aisia"
 #   version = "6.14.1"
-#   image_tag = "v6.14.8"
+#   image_tag = "v6.14.9"
 #   tier      = "saas"
 #   domain    = "acme.aisia.fr"
 # }
