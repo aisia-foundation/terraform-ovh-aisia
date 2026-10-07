@@ -8,7 +8,7 @@
 
 # terraform-ovh-aisia
 
-> **v6.14.10** · code **v6.14.12** (worktree candidat non tagué), registry/images LIVE encore **v6.14.10** — module registry — bootstrap OVH + substrat AISIA
+> **v6.14.10** · code **v6.14.13** (worktree candidat non tagué), registry/images LIVE encore **v6.14.10** — module registry — bootstrap OVH + substrat AISIA
 
 ## Cœur d'AISIA (identité produit)
 
@@ -25,7 +25,7 @@ puis cloud si nécessaire — via `BanditRouter`, pas un simple reverse-proxy.
 | Catalogue modèles | **9568** modèles |
 | Modèles locaux actifs | **60** / 132 catalogués |
 | Stateless | Qdrant + audit AI Act + multi-tenant |
-| SaaS opaque | Déployable Swarm/K8s — runtime **v6.14.10** · code **v6.14.12** |
+| SaaS opaque | Déployable Swarm/K8s — runtime **v6.14.10** · code **v6.14.13** |
 
 Documentation : [README racine](../../../../README.md) ·
 [Product Identity](../../../../specification/03-Project-State/Product-Identity-AISIA.md)
@@ -73,7 +73,7 @@ module "aisia_ovh_k8s" {
   org_id       = "acme"
   service_key  = "C1"
   service_name = "your-ovh-project-id"
-  image_tag    = "v6.14.12"
+  image_tag    = "v6.14.13"
   tier         = "saas"
 
   region       = "GRA11"
@@ -85,7 +85,7 @@ module "aisia_app" {
   source  = "aisia-foundation/cluster/aisia"
   version = "6.14.1"
 
-  image_tag = "v6.14.12"
+  image_tag = "v6.14.13"
   tier      = "saas"
   domain    = "acme.aisia.fr"
 }
@@ -104,7 +104,7 @@ module "aisia_app" {
 | `node_count` | Nombre de nœuds du pool principal | `number` | `1` | non |
 | `instance_flavor` | Flavor OVH MKS (b2-7 = 2 vCPU / 7 GB) | `string` | `"b2-7"` | non |
 | `image_registry` | Registry des images AISIA | `string` | `"registry.aisia.fr"` | non |
-| `image_tag` | Tag d'image AISIA à déployer | `string` | `"v6.14.12"` | non |
+| `image_tag` | Tag d'image AISIA à déployer | `string` | `"v6.14.13"` | non |
 | `domain` | Domaine custom (vide = *.aisia.fr) | `string` | `""` | non |
 | `tier` | Offre tarifaire (saas \| baas \| paas) | `string` | `"saas"` | non |
 | `gpu_enabled` | Provisionner un node pool GPU | `bool` | `false` | non |
@@ -160,7 +160,7 @@ module "aisia_app" {
 | `node_count` | `number` | `1` | Nombre de nœuds workers (desired_nodes du node pool principal). |
 | `instance_flavor` | `string` | `"b2-7"` | Flavor OVH des nœuds MKS (b2-7 = 2 vCPU / 7 GB RAM ; prod : b3-8, c3-8). |
 | `image_registry` | `string` | `"registry.aisia.fr"` | Registry des images AISIA (utilisé pour le tagging ; app deployée via terraform-aisia-cluster). |
-| `image_tag` | `string` | `"v6.14.12"` | Tag d'image AISIA à déployer (ex. v6.14.12). |
+| `image_tag` | `string` | `"v6.14.13"` | Tag d'image AISIA à déployer (ex. v6.14.13). |
 | `domain` | `string` | `""` | Domaine custom de l'org (vide = *.aisia.fr). |
 | `tier` | `string` | `"saas"` | Offre tarifaire AISIA (saas | baas | paas). |
 | `gpu_enabled` | `bool` | `false` | Provisionner un node pool GPU (flavor gpu_flavor par défaut). |
@@ -198,24 +198,24 @@ module "aisia_app" {
 - **Référence API** : [api.aisia.fr/docs](https://api.aisia.fr/docs)
 - **Provider Terraform** : [aisia-foundation/aisia](https://registry.terraform.io/providers/aisia-foundation/aisia/latest/docs)
 - **Guide d'implémentation** : [getting-started](https://registry.terraform.io/providers/aisia-foundation/aisia/latest/docs/guides/getting-started)
-- **Version module / code** : **v6.14.12**
+- **Version module / code** : **v6.14.13**
 - **PROD LIVE documentaire** : **v6.14.10** (runtime cluster ; distinct du tag module)
 
 <!-- TF-REGISTRY-STATUS -->
 ## Statut publication registry (honnête)
 
-> Mesuré à la régénération docs · **version code TF** **v6.14.12** (`VERSION` modules + provider) · PROD LIVE documentaire **v6.14.10**.
+> Mesuré à la régénération docs · **version code TF** **v6.14.13** (`VERSION` modules + provider) · PROD LIVE documentaire **v6.14.10**.
 
 | Artefact | Repo | Public registry.terraform.io |
 |----------|------|------------------------------|
-| Provider `aisia-foundation/aisia` | `6.14.12` | **6.14.11** ❌ écart |
-| Module `terraform-aisia-cluster` (`cluster/aisia`) | `6.14.12` | **6.14.11** ❌ écart |
-| Module `terraform-aisia-swarm` (`swarm/aisia`) | `6.14.12` | **6.14.11** ❌ écart |
-| Module `terraform-aws-aisia` (`aisia/aws`) | `6.14.12` | **6.14.11** ❌ écart |
-| Module `terraform-azure-aisia` (`aisia/azure`) | `6.14.12` | **6.14.11** ❌ écart |
-| Module `terraform-google-aisia` (`aisia/google`) | `6.14.12` | **6.14.11** ❌ écart |
-| Module `terraform-ovh-aisia` (`aisia/ovh`) | `6.14.12` | **6.14.11** ❌ écart |
-| Module `terraform-scaleway-aisia` (`aisia/scaleway`) | `6.14.12` | **6.14.11** ❌ écart |
+| Provider `aisia-foundation/aisia` | `6.14.13` | **6.14.11** ❌ écart |
+| Module `terraform-aisia-cluster` (`cluster/aisia`) | `6.14.13` | **6.14.12** ❌ écart |
+| Module `terraform-aisia-swarm` (`swarm/aisia`) | `6.14.13` | **6.14.12** ❌ écart |
+| Module `terraform-aws-aisia` (`aisia/aws`) | `6.14.13` | **6.14.12** ❌ écart |
+| Module `terraform-azure-aisia` (`aisia/azure`) | `6.14.13` | **6.14.12** ❌ écart |
+| Module `terraform-google-aisia` (`aisia/google`) | `6.14.13` | **6.14.12** ❌ écart |
+| Module `terraform-ovh-aisia` (`aisia/ovh`) | `6.14.13` | **6.14.12** ❌ écart |
+| Module `terraform-scaleway-aisia` (`aisia/scaleway`) | `6.14.13` | **6.14.12** ❌ écart |
 
 HCP privé (`app.terraform.io/AISIA`) : modules + provider publiés via `scripts/ops/publish_terraform.sh --apply` (mesuré hors ce tableau). Ne pas écrire « 100 % registry public » si Google public est absent.
 
