@@ -63,7 +63,7 @@ variable "image_registry" {
 variable "image_tag" {
   description = "Tag d'image AISIA à déployer."
   type        = string
-  default     = "v6.14.18"
+  default     = "v6.14.19"
 }
 
 variable "domain" {
