@@ -32,13 +32,13 @@ provider "ovh" {
 module "aisia_ovh_k8s" {
   # Registre HCP privé (nécessite credentials) :
   #   source  = "aisia-foundation/aisia/ovh"
-  #   version = "6.14.31"
+  #   version = "6.14.32"
   source = "../../"
 
   org_id       = "acme"
   service_key  = "C1"
   service_name = "your-ovh-project-id"
-  image_tag    = "v6.14.31"
+  image_tag    = "v6.14.32"
   tier         = "saas"
 
   region          = "GRA11"
@@ -59,8 +59,8 @@ module "aisia_ovh_k8s" {
 #
 # module "aisia_app" {
 #   source  = "aisia-foundation/cluster/aisia"
-#   version = "6.14.31"
-#   image_tag = "v6.14.31"
+#   version = "6.14.32"
+#   image_tag = "v6.14.32"
 #   tier      = "saas"
 #   domain    = "acme.aisia.fr"
 # }
